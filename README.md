@@ -2,6 +2,12 @@
 
 A python library that extract the current levels of donated blood from the website of a given states DRK (German red cross) website.
 
+----
+
+[![Ruff](https://github.com/Bouni/drkbloodbarometer/actions/workflows/ruff.yml/badge.svg)](https://github.com/Bouni/drkbloodbarometer/actions/workflows/ruff.yml)
+
+----
+
 ## Installation
 
 ```sh
