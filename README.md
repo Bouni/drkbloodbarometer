@@ -1,7 +1,7 @@
-    "g DRK-Blood-Baromete0
-    "
-    "A python library that extract the current levels of donated blood from the website of a given states DRK (German red cross) website.
-    "
+# DRK Blood Barometer
+
+A python library that extract the current levels of donated blood from the website of a given states DRK (German red cross) website.
+
 ## Installation
 
 ```sh
