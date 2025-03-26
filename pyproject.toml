@@ -1,0 +1,11 @@
+gproject]
+name = "drkbloodbarometer"
+version = "0.1.0"
+description = "A library for DRK blood donation service stock levels."
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.13.3",
+    "requests>=2.32.3",
+]
