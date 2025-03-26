@@ -36,6 +36,29 @@ The result looks like this
 2025-03-20 00:00:00
 ```
 
+## Supported states
+
+Not all states offer a blood barometer, therefore not all are supported (yet).
+
+ - Baden-Würtemberg: Yes
+ - Berlin: Yes
+ - Brandenburg: Yes
+ - Bremen: Yes
+ - Hamburg: Yes
+ - Hessen: Yes
+ - Mecklenburg-Vorpommern: Yes
+ - Niedersachsen: Yes
+ - Sachsen: Yes
+ - Sachsen-Anhalt: Yes
+ - Schleswig-Holstein: Yes
+ - Thüringen: Yes
+
+
+ - Bayern: No 
+ - Nordrhein-Westfalen: No
+ - Rheinland-Pfalz: No
+ - Saarland: No
+
 ## Disclaimer
 
 The author is not in any way affiliated with DRK. This library is neither offered nor supported by DRK. The authors do not take any liability for possible damages.
