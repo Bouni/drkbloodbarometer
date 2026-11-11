@@ -28,10 +28,4 @@ bloodtypes = {
     "zero_neg": "0-",
 }
 
-ratings = {
-    "Hoch": 100,
-    "Normal": 51,
-    "Niedrig": 39,
-    "Kritisch": 27,
-    "Bedrohlich": 16
-}
+ratings = {"Hoch": 100, "Normal": 51, "Niedrig": 39, "Kritisch": 27, "Bedrohlich": 16}

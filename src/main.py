@@ -9,8 +9,10 @@ from const import bloodtypes, ratings, states
 
 logger = logging.getLogger()
 
+
 class DRKBloodBarometer:
     """A library to extract the blood barometer data from the states DRK blood donation website."""
+
     def __init__(self, state):
         self.state = state
         self.base_url = None
@@ -20,7 +22,7 @@ class DRKBloodBarometer:
         self._get_data(state)
 
     def _get_data(self, state):
-        """Main method """
+        """Main method"""
         self._get_base_url(state)
         if not self.base_url:
             return
@@ -32,7 +34,9 @@ class DRKBloodBarometer:
         if "url" in states[state]:
             self.base_url = states[state]["url"]
         else:
-            logger.error(f"State {state} is currently not support due to unavailablity of raw data.")
+            logger.error(
+                f"State {state} is currently not support due to unavailablity of raw data."
+            )
 
     def _get_page(self):
         """Fetch the HTML page and store it."""
@@ -59,11 +63,11 @@ class DRKBloodBarometer:
         if not self.raw_data:
             logger.error("No raw data to parse.")
             return
-    
+
         try:
             soup = BeautifulSoup(self.raw_data, "html.parser")
             script = soup.find("script", attrs={"data-drupal-selector": True})
-            
+
             if not script:
                 logger.error("No script tag with 'data-drupal-selector' found.")
                 return
@@ -80,23 +84,28 @@ class DRKBloodBarometer:
                 try:
                     if "default" in data["blutgruppen"]:
                         self.bloodlevels[v]["level"] = (
-                            int(data["blutgruppen"]["default"][f"blood_barometer_{k}"]) * 12
+                            int(data["blutgruppen"]["default"][f"blood_barometer_{k}"])
+                            * 12
                         ) + 11
                     else:
                         self.bloodlevels[v]["level"] = (
                             float(data["blutgruppen"][f"blood_barometer_{k}"]) * 0.60
                         )
 
-                    self.bloodlevels[v]["warning"] = (
-                        self.bloodlevels[v]["level"] < ratings.get("Bedrohlich", 0)
-                    )
+                    self.bloodlevels[v]["warning"] = self.bloodlevels[v][
+                        "level"
+                    ] < ratings.get("Bedrohlich", 0)
                     self.bloodlevels[v]["rating"] = self._get_rating(
                         self.bloodlevels[v]["level"]
                     )
 
                 except (KeyError, ValueError, TypeError) as e:
                     logger.error(f"Error processing blood level data for {v}: {e}")
-                    self.bloodlevels[v] = {"level": None, "warning": None, "rating": None}
+                    self.bloodlevels[v] = {
+                        "level": None,
+                        "warning": None,
+                        "rating": None,
+                    }
 
             try:
                 self.lastChange = dt.strptime(

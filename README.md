@@ -17,7 +17,6 @@ pip install drkbloodbarometer
 ## Usage
 
 ```python
-
 from drkbloodbarometer import DRKBloodBarometer
 
 bb = DRKBloodBarometer("Baden-Würtemberg")
